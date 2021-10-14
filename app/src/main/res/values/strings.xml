@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">WorkoutBuddy</string>
+
+    <string name="option_menu_add_exercise">Add Exercise</string>
+    <string name="fragment_add_exercise_hint_name">Add Name</string>
+    <string name="fragment_add_exercise_fab_descrp">Add an exercise</string>
+
+    <string name="auth_logo_content_description">Auth logo</string>
+    <string name="auth_et_name_hint">Name</string>
+    <string name="auth_et_email_hint">Email</string>
+    <string name="auth_et_password_hint">Password</string>
+
+    <string name="login_title">LOGIN</string>
+    <string name="login_tv_forgot_password">Forgot Password?</string>
+    <string name="login_btn">Login</string>
+    <string name="login_create_account">Create a new account</string>
+
+    <string name="register_title">Register</string>
+    <string name="register_btn">Create Account</string>
+    <string name="reset_password_btn">Reset password</string>
+</resources>

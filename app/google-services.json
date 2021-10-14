@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "905846188193",
+    "project_id": "workoutbuddy-e7a8e",
+    "storage_bucket": "workoutbuddy-e7a8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905846188193:android:34aabeb72f54022609e8e0",
+        "android_client_info": {
+          "package_name": "my.aolika.workoutbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905846188193-vae6te8ucumqs7nr269pq6nhr6a19p3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "my.aolika.workoutbuddy",
+            "certificate_hash": "a38da9d216dc5c9b86be805a1a755a6ae18e7830"
+          }
+        },
+        {
+          "client_id": "905846188193-s5pi5p811nnt7ucojr1edr7rt3ankqvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-BZ1SIrJzeBPtZEh6S1EbqvmcZHTTtRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905846188193-s5pi5p811nnt7ucojr1edr7rt3ankqvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
