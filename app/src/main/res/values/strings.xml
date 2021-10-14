@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WorkoutBuddy</string>
+    <string name="app_name">Workout Buddy</string>
 
     <string name="option_menu_add_exercise">Add Exercise</string>
     <string name="fragment_add_exercise_hint_name">Add Name</string>

@@ -8,6 +8,6 @@ import android.view.ViewGroup
 import my.aolika.workoutbuddy.R
 
 
-class ResetPasswordFragment : Fragment() {
+class ResetPasswordFragment : Fragment(R.layout.fragment_reset_password) {
 
 }

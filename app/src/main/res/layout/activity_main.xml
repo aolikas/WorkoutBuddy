@@ -8,11 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/TextAppearance.AppCompat.Large"/>
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/container"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph" />
     </RelativeLayout>
