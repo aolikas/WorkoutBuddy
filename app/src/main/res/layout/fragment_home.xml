@@ -15,6 +15,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:text="Sign Out"/>
+
+        <TextView
+            android:id="@+id/tv_name_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="name"/>
     </LinearLayout>
 
 </layout>

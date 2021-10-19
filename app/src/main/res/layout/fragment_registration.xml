@@ -86,11 +86,11 @@
             android:layout_marginTop="@dimen/auth_btn_margin_top"
             android:text="@string/register_btn"
             android:textAllCaps="true"
-            android:textColor="@color/braun_dark"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/il_register_password"
-            app:strokeColor="@color/braun_dark"
+            app:strokeColor="@color/black"
             tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

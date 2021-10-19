@@ -1,6 +1,5 @@
 package my.aolika.workoutbuddy.auth
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -12,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import my.aolika.workoutbuddy.R
 import my.aolika.workoutbuddy.databinding.FragmentLoginBinding
 
@@ -20,8 +20,10 @@ class LoginFragment : Fragment() {
 
     //ViewBinding
     private lateinit var binding: FragmentLoginBinding
+
     //FirebaseAuth
     private lateinit var auth: FirebaseAuth
+
 
 
     override fun onCreateView(
@@ -33,7 +35,8 @@ class LoginFragment : Fragment() {
             inflater,
             R.layout.fragment_login,
             container,
-            false)
+            false
+        )
 
         //init FirebaseAuth
         auth = FirebaseAuth.getInstance()
@@ -44,16 +47,18 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnLogin.setOnClickListener{
+        binding.btnLogin.setOnClickListener {
             loginUser()
         }
 
         binding.btnCreateAccount.setOnClickListener {
-            view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
+            view.findNavController()
+                .navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
         }
 
         binding.btnForgotPassword.setOnClickListener {
-            view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToResetPasswordFragment())
+            view.findNavController()
+                .navigate(LoginFragmentDirections.actionLoginFragmentToResetPasswordFragment())
         }
     }
 
@@ -73,16 +78,20 @@ class LoginFragment : Fragment() {
             else -> {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
-                        if(task.isSuccessful) {
+                        if (task.isSuccessful) {
 
-                            Toast.makeText(context,
+                            Toast.makeText(
+                                context,
                                 "Success",
-                                Toast.LENGTH_SHORT).show()
+                                Toast.LENGTH_SHORT
+                            ).show()
                             checkLoggedState()
 
                         } else {
-                            Toast.makeText(context, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context, "Authentication failed.",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                     }
@@ -93,7 +102,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun checkLoggedState() {
-        if(auth.currentUser != null) {
+        if (auth.currentUser != null) {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
         }
     }

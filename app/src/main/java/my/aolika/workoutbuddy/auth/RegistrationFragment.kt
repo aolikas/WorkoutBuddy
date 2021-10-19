@@ -12,14 +12,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
-import kotlinx.coroutines.withContext
+import com.google.firebase.firestore.FirebaseFirestore
 import my.aolika.workoutbuddy.R
 import my.aolika.workoutbuddy.databinding.FragmentRegistrationBinding
-import java.lang.Exception
+import my.aolika.workoutbuddy.model.User
 
 
 class RegistrationFragment : Fragment() {
@@ -29,6 +25,9 @@ class RegistrationFragment : Fragment() {
 
     //FirebaseAuth
     private lateinit var auth: FirebaseAuth
+
+    //Firestore
+    private lateinit var dbFirestore: FirebaseFirestore
 
     //NavController
     private lateinit var navController: NavController
@@ -46,6 +45,9 @@ class RegistrationFragment : Fragment() {
 
         //init FirebaseAuth
         auth = FirebaseAuth.getInstance()
+
+        //init Firestore
+        dbFirestore = FirebaseFirestore.getInstance()
 
         return binding.root
     }
@@ -84,15 +86,20 @@ class RegistrationFragment : Fragment() {
 
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
-                        if(task.isSuccessful) {
-                            Toast.makeText(context,
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                context,
                                 "Success",
-                                Toast.LENGTH_SHORT).show()
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            createUser(name, email)
                             navController.navigate(RegistrationFragmentDirections.actionRegistrationFragmentToHomeFragment())
 
                         } else {
-                            Toast.makeText(context, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context, "Registration failed",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                     }
@@ -101,5 +108,34 @@ class RegistrationFragment : Fragment() {
 
         }
 
+    }
+
+    private fun createUser(name: String, email: String) {
+     //   val user = User()
+       // user.name = name
+       // user.email = email
+        val user = User(name, email)
+        insertUser(user)
+    }
+
+    private fun insertUser(user: User) {
+        val currentUser = auth.currentUser
+        var userId = ""
+        currentUser?.let {
+            userId = currentUser.uid
+        }
+
+        val ref = dbFirestore.collection("users")
+        ref.document(userId).set(user)
+            .addOnCompleteListener{
+             when{
+                 it.isSuccessful -> {
+//                     Toast.makeText(context, "Success!", Toast.LENGTH_SHORT).show()
+                 }
+                 else -> {
+           //          Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show()
+                 }
+             }
+            }
     }
 }
