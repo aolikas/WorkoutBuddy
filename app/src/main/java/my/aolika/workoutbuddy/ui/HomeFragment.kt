@@ -1,4 +1,4 @@
-package my.aolika.workoutbuddy
+package my.aolika.workoutbuddy.ui
 
 import android.os.Bundle
 import android.view.*
@@ -7,8 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import my.aolika.workoutbuddy.R
 import my.aolika.workoutbuddy.databinding.FragmentHomeBinding
-import my.aolika.workoutbuddy.databinding.FragmentLoginBinding
 
 
 class HomeFragment : Fragment() {
@@ -33,7 +33,6 @@ class HomeFragment : Fragment() {
 
         //init FirebaseAuth
         auth = FirebaseAuth.getInstance()
-
         //init Firestore
         dbFirestore = FirebaseFirestore.getInstance()
         readFirestore()
@@ -60,7 +59,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSignOut.setOnClickListener {
             auth.signOut()
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
+           findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
         }
     }
 

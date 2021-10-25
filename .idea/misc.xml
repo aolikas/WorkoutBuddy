@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_add_exercise.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_exercises.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.328804347826087" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1956521739130435" />
         <entry key="app/src/main/res/layout/fragment_registration.xml" value="0.328804347826087" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.2558876811594203" />
+        <entry key="app/src/main/res/layout/fragment_workout.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/item_exercise.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/menu/option_exercise_menu.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/menu/option_home_menu.xml" value="0.35572916666666665" />
       </map>
     </option>
   </component>

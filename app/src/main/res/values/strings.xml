@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Workout Buddy</string>
 
-    <string name="option_menu_add_exercise">Add Exercise</string>
-    <string name="fragment_add_exercise_hint_name">Add Name</string>
-    <string name="fragment_add_exercise_fab_descrp">Add an exercise</string>
+
+    <string name="add_exercise_hint_name">Add Name</string>
+    <string name="add_exercise_fab_description">Add an exercise</string>
 
     <string name="auth_logo_content_description">Auth logo</string>
     <string name="auth_et_name_hint">Name</string>
@@ -17,5 +17,15 @@
 
     <string name="register_title">Register</string>
     <string name="register_btn">Create Account</string>
+
     <string name="reset_password_btn">Reset password</string>
+
+    <string name="bottom_menu_home">Home</string>
+    <string name="bottom_menu_exercises">Exercises</string>
+    <string name="bottom_menu_workout">Workout</string>
+
+    <string name="option_home_menu_sign_out">Sign Out</string>
+    <string name="option_menu_add_exercise">Add Exercise</string>
+
+
 </resources>

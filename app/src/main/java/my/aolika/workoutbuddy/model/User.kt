@@ -1,9 +1,8 @@
 package my.aolika.workoutbuddy.model
 
-class User(
-    val name: String? = null,
-    val email: String? = null
-) {
-   // lateinit var email: String
-   // lateinit var name: String
-}
+class User(var name: String? = null,
+           var email: String? = null,
+           var exercises: ArrayList<String>? = null)
+
+
+
